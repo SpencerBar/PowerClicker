@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review</title>
+    <style>
+        #gTitle{
+            font-size: 40px;
+        }
+        #category{
+            font-size: large;
+            font-weight: bold;
+            padding-left: 30px;
+        }
+    </style>
     <script>
        window.addEventListener("DOMContentLoaded", ()=>{
         const gRev = document.getElementById("review")
@@ -13,6 +23,20 @@
             localStorage.author = searchParams.get("author");
             localStorage.like = searchParams.get("like");
             localStorage.posComments = searchParams.get("posComments");
+            localStorage.negComments = searchParams.get("negComments");
+
+            localStorage.story = searchParams.get("story");
+            localStorage.graphics = searchParams.get("graphics");
+            localStorage.gameplay = searchParams.get("gameplay");
+            localStorage.sound = searchParams.get("sound");
+            localStorage.xfactor = searchParams.get("xfactor");
+
+            localStorage.multiplayer = searchParams.get("multiplayer");
+            if(localStorage.multiplayer == "yes")
+            {
+              localStorage.playerCount = searchParams.get("playerCount");
+            }
+            
             
             document.title = localStorage.gTitle + " Review"
         
@@ -26,21 +50,43 @@
             document.getElementById("like").textContent = "In conclusion, I would not recommend " + localStorage.gTitle;
         }
         document.getElementById("posComments").textContent = localStorage.posComments;
-               
+        document.getElementById("negComments").textContent = localStorage.negComments;
+
+        document.getElementById("story").textContent = localStorage.story + "/5";
+        document.getElementById("graphics").textContent = localStorage.graphics + "/5";
+        document.getElementById("gameplay").textContent = localStorage.gameplay + "/5";
+        document.getElementById("sound").textContent = localStorage.sound + "/5";
+        document.getElementById("xfactor").textContent = localStorage.xfactor + "/5";
+                      
                 
                
         })
     </script>
 </head>
-<body>
-    <h1 id="gTitle"></h1>
-    <div id="author"></div>
-    <br><br>
+
+    <div id="gTitle"></div>
+    <div id="author"></div><br>
+
+    <h3>Game Info</h3>
+    <div id="plaform"></div>
+    <div id="multiplayer">
+    
+    <h3>Things I liked</h3>
     <div id="posComments"></div>
+    
+    <h3>Things I disliked</h3>
+    <div id="negComments"></div>
+<h3>Categorical Rating:</h3><div id="category">
+Story:     <span id="story"></span><br>
+Graphics:  <span id="graphics"></span><br>
+Gameplay:  <span id="gameplay"></span><br>
+Sound:     <span id="sound"></span><br>
+X-Factor:  <span id="xfactor"></span><br></div>
 
 
 
 
+<br>
     <div id="like"></div>
     
 </body>
