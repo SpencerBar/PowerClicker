@@ -39,10 +39,30 @@
             padding-top:1px;
            
             }
+
+            #error {
+            background-color: red;
+            color: white;
+            display: none;
+
+            }
         
 
     </style>
     <script>
+
+         window.addEventListener("DOMContentLoaded", () => {
+          const review = document.getElementById("review");
+          review.addEventListener("submit", e => {
+            const done = document.getElementById("done");
+            if (!done.value.match(/Done/i)){
+                
+                error.style.display = "inline-block";
+                e.preventDefault();
+            }
+
+          })
+        })
        
             function showPlayers() {
             document.getElementById('playerCount').style.display = 'block';
@@ -156,7 +176,17 @@
         <input name="platform" type="checkbox" value="SWITCH">SWITCH</input>
  <br><br>
 
-    <input type="submit">
+    <input id="done" type="text" placeholder="Type 'Done' to Submit" required>
+        
+        <br><br>
+
+        <input type="submit" id="finished">
+
+        <br><br>
+
+        <div id="error">!!!!Wrong Word Dummy!!!!</div>
+
+        </div>
     
 </form>
     
