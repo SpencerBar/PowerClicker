@@ -18,35 +18,42 @@
        window.addEventListener("DOMContentLoaded", ()=>{
         const gRev = document.getElementById("review")
         const searchParams = new URLSearchParams(window.location.search);
-        // importing all the url stuff
+        // importing all the url stuff 
             localStorage.gTitle = searchParams.get("title");
             localStorage.author = searchParams.get("author");
             localStorage.like = searchParams.get("like");
             localStorage.posComments = searchParams.get("posComments");
             localStorage.negComments = searchParams.get("negComments");
-
-            localStorage.story = searchParams.get("story");
-            localStorage.graphics = searchParams.get("graphics");
-            localStorage.gameplay = searchParams.get("gameplay");
-            localStorage.sound = searchParams.get("sound");
-            localStorage.xfactor = searchParams.get("xfactor");
-
+        //setting title
+            document.title = localStorage.gTitle + " Review"
+        //multiplayer/player count
             localStorage.multiplayer = searchParams.get("multiplayer");
             if(localStorage.multiplayer == "yes")
             {
               localStorage.playerCount = searchParams.get("playerCount");
             }
-            localStorage.platform = searchParams.get("platform");
+
+            localStorage.platform = searchParams.getAll('platform')
+            localStorage.platform = localStorage.platform.split(",").join(', ');
             
-            document.title = localStorage.gTitle + " Review"
+           
+            
+        // category ratings
+            localStorage.story = searchParams.get("story");
+            localStorage.graphics = searchParams.get("graphics");
+            localStorage.gameplay = searchParams.get("gameplay");
+            localStorage.sound = searchParams.get("sound");
+            localStorage.xfactor = searchParams.get("xfactor");
         
-        // setting content to imported url stuff
         //header
         document.getElementById("gTitle").textContent = localStorage.gTitle + " Game Review";
         document.getElementById("author").textContent ="By: " + localStorage.author;
 
         //gameinfo
-        document.getElementById("platform").textContent = localStorage.platform
+        // if('PS4' in localStorage.platform){
+            document.getElementById("platform").textContent = localStorage.platform;
+        
+        
         if (localStorage.multiplayer = "yes"){
           document.getElementById("multiplayer").textContent = "Multiplayer: Yes";
           document.getElementById("playerCount").textContent = "Players: 1-"+localStorage.playerCount;
