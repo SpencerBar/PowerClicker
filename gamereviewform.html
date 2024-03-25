@@ -10,6 +10,11 @@
         margin-left: 10%;
         margin-right: 10%;
         }
+        .heading{
+            color:darkcyan;
+            font-weight: bold;
+            text-decoration:dotted underline 1px ;
+        }
         .container{
             display:flex;
             background-color:rgb(209, 129, 24);
@@ -28,6 +33,7 @@
         }
         
         .main-content {
+
             background-color: white;
             padding:5%;
             padding-top:1px;
@@ -58,12 +64,13 @@
             
         
     <h1>Game Review!</h1>
-
+        <div class="heading">Game Title</div>
     <input type="text" placeholder="Enter Game Title">
 
     <br><br>
-
-    <input type="checkbox">Did you like it?
+    <div class="heading">Did you like it?</div>
+    <input type="radio" name="like" onclick="showPlayers()">Yes
+    <input type="radio" name="like" onclick="hidePlayers()">No
 
     <br><br>
 
@@ -71,8 +78,8 @@
 
     <br><br>
 
-    Story
-    <br>
+    <div class="heading">Story</div>
+    
     <input type="radio" name="story">1
     <input type="radio" name="story">2
     <input type="radio" name="story">3
@@ -81,8 +88,8 @@
 
     <br><br>
 
-    Graphics
-    <br>
+    <div class="heading">Graphics</div>
+    
     <input type="radio" name="graphics">1
     <input type="radio" name="graphics">2
     <input type="radio" name="graphics">3
@@ -91,8 +98,8 @@
 
     <br><br>
 
-    Gameplay
-    <br>
+    <div class="heading">Gameplay</div>
+    
     <input type="radio" name="gameplay">1
     <input type="radio" name="gameplay">2
     <input type="radio" name="gameplay">3
@@ -100,8 +107,8 @@
     <input type="radio" name="gameplay">5
 
     <br><br>
-    Sound
-    <br>
+    <div class="heading">Sound</div>
+    
     <input type="radio" name="sound">1
     <input type="radio" name="sound">2
     <input type="radio" name="sound">3
@@ -110,8 +117,8 @@
 
     <br><br>
 
-    X-Factor
-    <br>
+    <div class="heading">X-Factor</div>
+    
     <input type="radio" name="x-factor">1
     <input type="radio" name="x-factor">2
     <input type="radio" name="x-factor">3
@@ -119,21 +126,20 @@
     <input type="radio" name="x-factor">5
 
     <br><br>
-    Is it multiplayer?
-    <br>
+    <div class="heading">Is it multiplayer?</div>
     <input type="radio" name="yesno" onclick="showPlayers()">Yes
     <input type="radio" name="yesno" onclick="hidePlayers()">No
     <br><br>
     <div id="playerCount" style="display:none">
-        How many players?<br>
+        <div class="heading">How many players?</div>
         <input type="range" name="playerCount" min="2" max="10" onchange="updatePlayerCountDisplay(this.value)">
         <span id="playerCountValue">6</span>
         
         <br><br>
     </div>
 
-    Which platforms is it available on?
-    <br>
+    <div class="heading">Which platforms is it available on?</div>
+
         <input type="checkbox" value="PC">PC</input>
         <input type="checkbox" value="PS4">PS4</input>
         <input type="checkbox" value="PS5">PS5</input>
