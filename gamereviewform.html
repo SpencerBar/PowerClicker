@@ -32,7 +32,7 @@
             color:black;
         }
         
-        .main-content {
+        #review {
 
             background-color: white;
             padding:5%;
@@ -60,21 +60,29 @@
    
         
         
-    <div class="main-content">
+    <form id="review" action="gamereviewresults.html">
             
         
     <h1>Game Review!</h1>
-        <div class="heading">Game Title</div>
-    <input type="text" placeholder="Enter Game Title">
+    <div class="heading">Game Title</div>
+    <input name="title" type="text" placeholder="Enter Game Title" required>
+    <br><br>
+    
+    <div class="heading">Review Author</div>
+    <input name="author" type="text" placeholder="Enter Name" required>
 
     <br><br>
     <div class="heading">Did you like it?</div>
-    <input type="radio" name="like" onclick="showPlayers()">Yes
-    <input type="radio" name="like" onclick="hidePlayers()">No
+    <input type="radio" name="like" value="yes">Yes
+    <input type="radio" name="like" value="no">No
 
     <br><br>
+    <div class="heading">What did you like?</div>
+    <input name= "posComments" id="posComments" type="text">
 
-    <input id="comments" type="text" placeholder="What Stood Out?">
+    <br><br>
+    <div class="heading">What didn't you like?</div>
+    <input name= "negComments" id="negComments" type="text">
 
     <br><br>
 
@@ -140,17 +148,17 @@
 
     <div class="heading">Which platforms is it available on?</div>
 
-        <input type="checkbox" value="PC">PC</input>
-        <input type="checkbox" value="PS4">PS4</input>
-        <input type="checkbox" value="PS5">PS5</input>
-        <input type="checkbox" value="XBONE">XBONE</input>
-        <input type="checkbox" value="XB360">XB360</input>
-        <input type="checkbox" value="SWITCH">SWITCH</input>
+        <input name="platform" type="checkbox" value="PC">PC</input>
+        <input name="platform" type="checkbox" value="PS4">PS4</input>
+        <input name="platform" type="checkbox" value="PS5">PS5</input>
+        <input name="platform" type="checkbox" value="XBONE">XBONE</input>
+        <input name="platform" type="checkbox" value="XB360">XB360</input>
+        <input name="platform" type="checkbox" value="SWITCH">SWITCH</input>
  <br><br>
 
     <input type="submit">
     
-    </div>
+</form>
     
 </body>
 </html>

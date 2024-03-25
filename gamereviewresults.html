@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+    <script>
+       window.addEventListener("DOMContentLoaded", ()=>{
+        const gRev = document.getElementById("review")
+        const searchParams = new URLSearchParams(window.location.search);
+        
+            localStorage.gTitle = searchParams.get("title");
+            localStorage.author = searchParams.get("author");
+            localStorage.like = searchParams.get("like");
+            localStorage.posComments = searchParams.get("posComments");
+            
+            document.title = localStorage.gTitle + " Review"
+        
+
+        document.getElementById("gTitle").textContent = localStorage.gTitle + " Game Review";
+        document.getElementById("author").textContent ="By: " + localStorage.author;
+        if (localStorage.like == "yes"){
+            document.getElementById("like").textContent = "In conclusion, I would recommend " + localStorage.gTitle;
+        }
+        else{
+            document.getElementById("like").textContent = "In conclusion, I would not recommend " + localStorage.gTitle;
+        }
+        document.getElementById("posComments").textContent = localStorage.posComments;
+               
+                
+               
+        })
+    </script>
+</head>
+<body>
+    <h1 id="gTitle"></h1>
+    <div id="author"></div>
+    <br><br>
+    <div id="posComments"></div>
+
+
+
+
+    <div id="like"></div>
+    
+</body>
+</html>
