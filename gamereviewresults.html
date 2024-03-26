@@ -6,13 +6,52 @@
     <title>Review</title>
     <style>
         #gTitle{
+            background-color: darkcyan;
+            color: white;
+            padding: 20px;
             font-size: 40px;
+            font-weight: bold;
         }
-        #category{
+
+        #author {
+            font-style: italic;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    
+        .heading {
             font-size: large;
             font-weight: bold;
-            padding-left: 30px;
+            padding-left: 15px;
         }
+
+        h3 {
+            color: darkcyan;
+            font-weight: bold;
+            font-size: 20px
+        }
+
+
+        body {
+            background: antiquewhite;
+            padding: 20px 20px 10px
+        }
+
+        #form {
+            background-color: white;
+            padding: 20px
+        }
+
+        #like {
+            background-color: darkcyan;
+            color: white;
+        }
+        #avg{
+            font-size:30px;
+        }
+
+        
+        
     </style>
     <script>
        window.addEventListener("DOMContentLoaded", ()=>{
@@ -44,13 +83,15 @@
             localStorage.gameplay = searchParams.get("gameplay");
             localStorage.sound = searchParams.get("sound");
             localStorage.xfactor = searchParams.get("xfactor");
+
+            localStorage.Rdate = searchParams.get("rDate");
         
         //header
         document.getElementById("gTitle").textContent = localStorage.gTitle + " Game Review";
         document.getElementById("author").textContent ="By: " + localStorage.author;
+        document.getElementById("date").textContent = localStorage.Rdate;
 
         //gameinfo
-        // if('PS4' in localStorage.platform){
             document.getElementById("platform").textContent = localStorage.platform;
         
         
@@ -73,39 +114,44 @@
         document.getElementById("gameplay").textContent = localStorage.gameplay + "/5";
         document.getElementById("sound").textContent = localStorage.sound + "/5";
         document.getElementById("xfactor").textContent = localStorage.xfactor + "/5";
+        document.getElementById("avg").textContent = "Average Score: "+((parseInt(localStorage.story) + parseInt(localStorage.graphics) + parseInt(localStorage.gameplay) + parseInt(localStorage.sound) + parseInt(localStorage.xfactor))/5) +"/5";
         //conclusion        
         if (localStorage.like == "yes"){
             document.getElementById("like").textContent = "In conclusion, I would recommend " + localStorage.gTitle;
         }
         else{
             document.getElementById("like").textContent = "In conclusion, I would not recommend " + localStorage.gTitle;
-        }   
+        }  
+
                
         })
     </script>
 </head>
 <body>
-    <div id="gTitle"></div>
-    <div id="author"></div><br>
+    <div id="form">
+        <div id="gTitle"></div>
+        <div id="author"></div><div id="date"></div><br>
 
-    <h3>Game Info</h3>
-    <div id="platform"></div>
-    <div id="multiplayer"></div>
-    <div id="playerCount"></div>
-    
-    <h3>Things I liked</h3>
-    <div id="posComments"></div>
-    
-    <h3>Things I disliked</h3>
-    <div id="negComments"></div>
-<h3>Categorical Rating:</h3><div id="category">
-Story:     <span id="story"></span><br>
-Graphics:  <span id="graphics"></span><br>
-Gameplay:  <span id="gameplay"></span><br>
-Sound:     <span id="sound"></span><br>
-X-Factor:  <span id="xfactor"></span><br></div>
-<br>
-    <div id="like"></div>
-    
+        <h3>Game Info</h3>
+            
+            <div class="heading" id="platform"></div>
+            <div class="heading" id="multiplayer"></div>
+            <div class="heading" id="playerCount"></div>
+        
+        <h3>Things I liked</h3>
+            <div class="heading" id="posComments"></div>
+        
+        <h3>Things I disliked</h3>
+            <div class="heading" id="negComments"></div>
+    <h3>Categorical Rating:</h3><div class="heading" id="category">
+        Story:     <span id="story"></span><br>
+        Graphics:  <span id="graphics"></span><br>
+        Gameplay:  <span id="gameplay"></span><br>
+        Sound:     <span id="sound"></span><br>
+        X-Factor:  <span id="xfactor"></span><br>
+        <span id="avg"></span></div>
+    <br>
+        <div id="like"></div>
+    </div>
 </body>
 </html>
