@@ -57,14 +57,15 @@
        window.addEventListener("DOMContentLoaded", ()=>{
         const gRev = document.getElementById("review")
         const searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.get("title") != null)
+        {
         // importing all the url stuff 
             localStorage.gTitle = searchParams.get("title");
             localStorage.author = searchParams.get("author");
             localStorage.like = searchParams.get("like");
             localStorage.posComments = searchParams.get("posComments");
             localStorage.negComments = searchParams.get("negComments");
-        //setting title
-            document.title = localStorage.gTitle + " Review"
+        
         //multiplayer/player count
             localStorage.multiplayer = searchParams.get("multiplayer");
             if(localStorage.multiplayer == "yes")
@@ -85,7 +86,9 @@
             localStorage.xfactor = searchParams.get("xfactor");
 
             localStorage.Rdate = searchParams.get("rDate");
-        
+        }
+        //setting title
+        document.title = localStorage.gTitle + " Review"
         //header
         document.getElementById("gTitle").textContent = localStorage.gTitle + " Game Review";
         document.getElementById("author").textContent ="By: " + localStorage.author;
