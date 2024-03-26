@@ -93,22 +93,22 @@
 
     <br><br>
     <div class="heading">Did you like it?</div>
-    <input type="radio" name="like" value="yes">Yes
+    <input type="radio" name="like" value="yes" required>Yes
     <input type="radio" name="like" value="no">No
 
     <br><br>
     <div class="heading">What did you like?</div>
-    <textarea name= "posComments" id="posComments" rows="6"></textarea>
+    <textarea name= "posComments" id="posComments" rows="6" required></textarea>
 
     <br><br>
     <div class="heading">What didn't you like?</div>
-    <textarea name= "negComments" id="negComments" rows="6"></textarea>
+    <textarea name= "negComments" id="negComments" rows="6" required></textarea>
 
     <br><br>
 
     <div class="heading">Story</div>
     
-    <input type="radio" name="story" value="1" >1
+    <input type="radio" name="story" value="1" required>1
     <input type="radio" name="story" value="2">2
     <input type="radio" name="story" value="3">3
     <input type="radio" name="story" value="4">4
@@ -118,7 +118,7 @@
 
     <div class="heading">Graphics</div>
     
-    <input type="radio" name="graphics" value="1">1
+    <input type="radio" name="graphics" value="1" required>1
     <input type="radio" name="graphics" value="2">2
     <input type="radio" name="graphics" value="3">3
     <input type="radio" name="graphics" value="4">4
@@ -128,7 +128,7 @@
 
     <div class="heading">Gameplay</div>
     
-    <input type="radio" name="gameplay" value="1">1
+    <input type="radio" name="gameplay" value="1" required>1
     <input type="radio" name="gameplay" value="2">2
     <input type="radio" name="gameplay" value="3">3
     <input type="radio" name="gameplay" value="4">4
@@ -137,7 +137,7 @@
     <br><br>
     <div class="heading">Sound</div>
     
-    <input type="radio" name="sound" value="1">1
+    <input type="radio" name="sound" value="1" required>1
     <input type="radio" name="sound" value="2">2
     <input type="radio" name="sound" value="3">3
     <input type="radio" name="sound" value="4">4
@@ -147,7 +147,7 @@
 
     <div class="heading">X-Factor</div>
     
-    <input type="radio" name="xfactor" value="1">1
+    <input type="radio" name="xfactor" value="1" required>1
     <input type="radio" name="xfactor" value="2">2
     <input type="radio" name="xfactor" value="3">3
     <input type="radio" name="xfactor" value="4">4
@@ -155,7 +155,7 @@
 
     <br><br>
     <div class="heading">Is it multiplayer?</div>
-    <input type="radio" name="multiplayer" onclick="showPlayers()" value="yes">Yes
+    <input type="radio" name="multiplayer" onclick="showPlayers()" value="yes" required>Yes
     <input type="radio" name="multiplayer" onclick="hidePlayers()" value="no">No
     <br><br>
     <div id="playerCount" style="display:none">
@@ -168,7 +168,7 @@
 
     <div class="heading">Which platforms is it available on?</div>
 
-        <input name="platform" id="pc" type="checkbox" value="PC">PC</textarea>
+        <input name="platform" id="pc" type="checkbox" value="PC" required>PC</textarea>
         <input name="platform" id="ps4" type="checkbox" value="PS4">PS4</input>
         <input name="platform" id="ps5" type="checkbox" value="PS5">PS5</input>
         <input name="platform" id="xb1" type="checkbox" value="XBONE">XBONE</input>
@@ -176,7 +176,7 @@
         <input name="platform" id="sw" type="checkbox" value="SWITCH">SWITCH</input>
  <br><br>
         <div class="heading">Enter review date:</div>
-        <input name="rDate" id="date" type="date">
+        <input name="rDate" id="date" type="date" required>
         <br><br>
     <input id="done" type="text" placeholder="Type 'Done' to Submit" required>
         
